@@ -16,6 +16,7 @@ Requires:	ruby-railties = %{version}-%{release}
 Requires:	ruby-rake >= 0.7.2
 Obsoletes:	railties
 Obsoletes:	ruby-Rails
+Provides:	ruby-rails = %{version}
 #BuildArch:	noarch
 %{?ruby_mod_ver_requires_eq}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -44,6 +45,7 @@ Requires:	ruby-actionpack = 2.3.5
 Requires:	ruby-activerecord = 2.3.5
 Requires:	ruby-activeresource = 2.3.5
 Requires:	ruby-activesupport = 2.3.5
+Provides:	ruby-railties = %{version}
 
 %description -n ruby-railties2
 Rails is a framework for building web-application using CGI, FCGI,
