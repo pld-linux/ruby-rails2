@@ -140,7 +140,7 @@ rm -rf $RPM_BUILD_ROOT
 %{ruby_ridir}/Rails*
 %{ruby_ridir}/Repositor*
 
-%files -n ruby-railties
+%files -n ruby-railties2
 %defattr(644,root,root,755)
 %{ruby_rubylibdir}/*
 %exclude %{ruby_rubylibdir}/commands*
