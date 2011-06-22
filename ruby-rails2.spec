@@ -7,7 +7,7 @@ License:	MIT
 Group:		Development/Languages
 Source0:	http://rubygems.org/downloads/%{pkgname}-%{version}.gem
 # Source0-md5:	d09038cee224b1a51ae50eff772cd8f2
-Patch0:		%{name}-paths.patch
+Patch0:		ruby-rails-paths.patch
 URL:		http://www.rubyonrails.org/
 BuildRequires:	rpmbuild(macros) >= 1.277
 BuildRequires:	ruby-modules
