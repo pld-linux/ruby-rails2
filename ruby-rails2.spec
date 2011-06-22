@@ -1,6 +1,6 @@
 %define pkgname rails
 Summary:	Web-application framework with template engine, control-flow layer, and ORM
-Name:		ruby-%{pkgname}
+Name:		ruby-rails2
 Version:	2.3.5
 Release:	1
 License:	MIT
@@ -36,7 +36,7 @@ napisana w języku Ruby.
 
 This package contains development tools.
 
-%package -n ruby-railties
+%package -n ruby-railties2
 Summary:	Gluing the Engine to the Rails
 Group:		Development/Languages
 Requires:	ruby-actionmailer = 2.3.5
@@ -45,7 +45,7 @@ Requires:	ruby-activerecord = 2.3.5
 Requires:	ruby-activeresource = 2.3.5
 Requires:	ruby-activesupport = 2.3.5
 
-%description -n ruby-railties
+%description -n ruby-railties2
 Rails is a framework for building web-application using CGI, FCGI,
 mod_ruby, or WEBrick on top of either MySQL, PostgreSQL, SQLite, DB2,
 SQL Server, or Oracle with eRuby- or Builder-based templates.
