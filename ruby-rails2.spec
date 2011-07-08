@@ -1,12 +1,12 @@
 %define pkgname rails
 Summary:	Web-application framework with template engine, control-flow layer, and ORM
 Name:		ruby-rails2
-Version:	2.3.5
+Version:	2.3.11
 Release:	1
 License:	MIT
 Group:		Development/Languages
 Source0:	http://rubygems.org/downloads/%{pkgname}-%{version}.gem
-# Source0-md5:	d09038cee224b1a51ae50eff772cd8f2
+# Source0-md5:	b37fc9fffea688110f2072d02309bbfa
 Patch0:		ruby-rails-paths.patch
 URL:		http://www.rubyonrails.org/
 BuildRequires:	rpmbuild(macros) >= 1.277
@@ -40,11 +40,11 @@ This package contains development tools.
 %package -n ruby-railties2
 Summary:	Gluing the Engine to the Rails
 Group:		Development/Languages
-Requires:	ruby-actionmailer = 2.3.5
-Requires:	ruby-actionpack = 2.3.5
-Requires:	ruby-activerecord = 2.3.5
-Requires:	ruby-activeresource = 2.3.5
-Requires:	ruby-activesupport = 2.3.5
+Requires:	ruby-actionmailer = 2.3.11
+Requires:	ruby-actionpack = 2.3.11
+Requires:	ruby-activerecord = 2.3.11
+Requires:	ruby-activeresource = 2.3.11
+Requires:	ruby-activesupport = 2.3.11
 Provides:	ruby-railties = %{version}
 
 %description -n ruby-railties2

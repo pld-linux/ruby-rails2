@@ -14,31 +14,12 @@ diff --git a/bin/rails b/bin/rails
 index 6a0c675..9cd410a 100755
 --- a/bin/rails
 +++ b/bin/rails
-@@ -1,7 +1,8 @@
--require File.dirname(__FILE__) + '/../lib/ruby_version_check'
+@@ -1,4 +1,4 @@
+-$:.unshift File.expand_path("../../lib", __FILE__)
 +#!/usr/bin/ruby
-+
+ 
  Signal.trap("INT") { puts; exit }
  
--require File.dirname(__FILE__) + '/../lib/rails/version'
-+require 'rails/version'
- if %w(--version -v).include? ARGV.first
-   puts "Rails #{Rails::VERSION::STRING}"
-   exit(0)
-@@ -11,10 +12,10 @@ freeze   = ARGV.any? { |option| %w(--freeze -f).include?(option) }
- 
- app_path = ARGV.first
- 
--require File.dirname(__FILE__) + '/../lib/rails_generator'
-+require 'rails_generator'
- 
- require 'rails_generator/scripts/generate'
- Rails::Generator::Base.use_application_sources!
- Rails::Generator::Scripts::Generate.new.run(ARGV, :generator => 'app')
- 
--Dir.chdir(app_path) { `rake rails:freeze:gems`; puts "froze" } if freeze
-\ No newline at end of file
-+Dir.chdir(app_path) { `rake rails:freeze:gems`; puts "froze" } if freeze
 diff --git a/environments/boot.rb b/environments/boot.rb
 index dd5e3b6..c39a225 100644
 --- a/environments/boot.rb
@@ -52,7 +33,7 @@ index dd5e3b6..c39a225 100644
      end
  
      def vendor_rails?
-@@ -48,61 +48,10 @@ module Rails
+@@ -48,65 +48,10 @@ module Rails
      end
    end
  
@@ -71,8 +52,12 @@ index dd5e3b6..c39a225 100644
 -        gem 'rails'
 -      end
 -    rescue Gem::LoadError => load_error
--      $stderr.puts %(Missing the Rails #{version} gem. Please `gem install -v=#{version} rails`, update your RAILS_GEM_VERSION setting in config/environment.rb for the Rails version you do have installed, or comment out RAILS_GEM_VERSION to use the latest version installed.)
--      exit 1
+-      if load_error.message =~ /Could not find RubyGem rails/
+-        STDERR.puts %(Missing the Rails #{version} gem. Please `gem install -v=#{version} rails`, update your RAILS_GEM_VERSION setting in config/environment.rb for the Rails version you do have installed, or comment out RAILS_GEM_VERSION to use the latest version installed.)
+-        exit 1
+-      else
+-        raise
+-      end
 -    end
 -
 -    class << self
@@ -228,12 +213,15 @@ diff --git a/lib/rails_generator.rb b/lib/rails_generator.rb
 index 9f0ffc1..2fbcfa6 100644
 --- a/lib/rails_generator.rb
 +++ b/lib/rails_generator.rb
-@@ -21,15 +21,7 @@
+@@ -21,18 +21,7 @@
  # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  #++
  
--$:.unshift(File.dirname(__FILE__))
--$:.unshift(File.dirname(__FILE__) + "/../../activesupport/lib")
+-railties = File.expand_path("..", __FILE__)
+-$:.unshift(railties) unless $:.include?(railties)
+-
+-activesupport = File.expand_path("../../../activesupport/lib", __FILE__)
+-$:.unshift(activesupport) unless $:.include?(activesupport)
 -
 -begin
 -  require 'active_support'  
