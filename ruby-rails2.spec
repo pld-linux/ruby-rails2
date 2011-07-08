@@ -2,7 +2,7 @@
 Summary:	Web-application framework with template engine, control-flow layer, and ORM
 Name:		ruby-rails2
 Version:	2.3.11
-Release:	1
+Release:	2
 License:	MIT
 Group:		Development/Languages
 Source0:	http://rubygems.org/downloads/%{pkgname}-%{version}.gem
@@ -12,7 +12,7 @@ URL:		http://www.rubyonrails.org/
 BuildRequires:	rpmbuild(macros) >= 1.277
 BuildRequires:	ruby-modules
 Requires:	ruby-modules >= 1.8.4-1
-Requires:	ruby-railties = %{version}-%{release}
+Requires:	ruby-railties2 = %{version}-%{release}
 Requires:	ruby-rake >= 0.7.2
 Obsoletes:	railties
 Obsoletes:	ruby-Rails
@@ -45,7 +45,7 @@ Requires:	ruby-actionpack = 2.3.11
 Requires:	ruby-activerecord = 2.3.11
 Requires:	ruby-activeresource = 2.3.11
 Requires:	ruby-activesupport = 2.3.11
-Provides:	ruby-railties = %{version}
+Provides:	ruby-railties = %{version}-%{release}
 
 %description -n ruby-railties2
 Rails is a framework for building web-application using CGI, FCGI,
