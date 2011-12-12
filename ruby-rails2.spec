@@ -40,11 +40,11 @@ This package contains development tools.
 %package -n ruby-railties2
 Summary:	Gluing the Engine to the Rails
 Group:		Development/Languages
-Requires:	ruby-actionmailer = 2.3.11
-Requires:	ruby-actionpack = 2.3.11
-Requires:	ruby-activerecord = 2.3.11
-Requires:	ruby-activeresource = 2.3.11
-Requires:	ruby-activesupport = 2.3.11
+Requires:	ruby-actionmailer = 2.3.14
+Requires:	ruby-actionpack = 2.3.14
+Requires:	ruby-activerecord = 2.3.14
+Requires:	ruby-activeresource = 2.3.14
+Requires:	ruby-activesupport = 2.3.14
 Provides:	ruby-railties = %{version}-%{release}
 
 %description -n ruby-railties2
