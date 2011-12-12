@@ -1,12 +1,12 @@
 %define pkgname rails
 Summary:	Web-application framework with template engine, control-flow layer, and ORM
 Name:		ruby-rails2
-Version:	2.3.11
-Release:	2
+Version:	2.3.14
+Release:	1
 License:	MIT
 Group:		Development/Languages
 Source0:	http://rubygems.org/downloads/%{pkgname}-%{version}.gem
-# Source0-md5:	b37fc9fffea688110f2072d02309bbfa
+# Source0-md5:	10177c63d1b943861ccce031cb22c100
 Patch0:		ruby-rails-paths.patch
 URL:		http://www.rubyonrails.org/
 BuildRequires:	rpmbuild(macros) >= 1.277
