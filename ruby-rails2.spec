@@ -96,7 +96,7 @@ find '(' -name '*~' -o -name '*.orig' ')' -print0 | xargs -0 -r -l512 rm -f
 %build
 rdoc --ri --op ri lib
 rdoc --op rdoc lib
-rm -r ri/{\<,ActiveSupport,CGI,CodeStatistics,Dir,DispatchServlet} \
+rm -fr ri/{\<,ActiveSupport,CGI,CodeStatistics,Dir,DispatchServlet} \
 	ri/{Gem,Object,Plugin,RecursiveHTTPFetcher,RemoteCGI} \
 	ri/{SourceAnnotationExtractor,Tracker}
 rm ri/created.rid
