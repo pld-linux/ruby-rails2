@@ -2,7 +2,7 @@
 Summary:	Web-application framework with template engine, control-flow layer, and ORM
 Name:		ruby-rails2
 Version:	2.3.16
-Release:	2
+Release:	3
 License:	MIT
 Group:		Development/Languages
 Source0:	http://rubygems.org/downloads/%{pkgname}-%{version}.gem
