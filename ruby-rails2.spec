@@ -2,7 +2,7 @@
 Summary:	Web-application framework with template engine, control-flow layer, and ORM
 Name:		ruby-rails2
 Version:	2.3.16
-Release:	3
+Release:	4
 License:	MIT
 Group:		Development/Languages
 Source0:	http://rubygems.org/downloads/%{pkgname}-%{version}.gem
@@ -96,10 +96,13 @@ find '(' -name '*~' -o -name '*.orig' ')' -print0 | xargs -0 -r -l512 rm -f
 %build
 rdoc --ri --op ri lib
 rdoc --op rdoc lib
-rm -fr ri/{\<,ActiveSupport,CGI,CodeStatistics,Dir,DispatchServlet} \
+rm -r ri/{ActiveSupport,Dir,DispatchServlet} \
 	ri/{Gem,Object,Plugin,RecursiveHTTPFetcher,RemoteCGI} \
-	ri/{SourceAnnotationExtractor,Tracker}
+	ri/{SourceAnnotationExtractor,Tracker} \
+	ri/{ActionController,ActiveRecord,Prof,Rack,RubyProf,Test,YAML} \
+	ri/lib/{rails_generator,tasks}
 rm ri/created.rid
+rm ri/cache.ri
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -124,7 +127,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{pkgname}
 %{ruby_rubylibdir}/commands*
-%{ruby_rubylibdir}/tasks/*
+%{ruby_rubylibdir}/tasks
 %{ruby_rubylibdir}/console_*.rb
 %{ruby_rubylibdir}/*_server.rb
 
